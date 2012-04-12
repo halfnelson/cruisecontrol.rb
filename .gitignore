@@ -24,5 +24,6 @@ vendor/bundle
 server_jar/target/
 
 config/ccrb.properties
+config/initializers/omniauth.rb
 pkg
 reports

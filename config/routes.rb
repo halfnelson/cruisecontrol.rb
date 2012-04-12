@@ -24,6 +24,11 @@ CruiseControl::Application.routes.draw do
   match 'XmlStatusReport.aspx' => 'projects#index', :format => 'cctray'
   match 'XmlServerReport.aspx' => 'projects#index', :format => 'cctray'
 
+  match "/signin" => "sessions#signin", :as => :signin
+  match "/auth/:provider/callback" => "sessions#create"
+  match "/auth/failure" => "sessions#failure"
+  match "/signout" => "sessions#destroy", :as => :signout
+
   # TODO Remove this.
   match '/:controller(/:action(/:id))'
 end
